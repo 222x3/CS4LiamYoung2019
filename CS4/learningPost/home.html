@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <input type="number" id="input">
+  <input type="button" id="submit" value="submit">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  function success(data){
+    console.log("Changed to: " + data.n)
+  }
+  $("#submit").click(function(){
+    $.post("/setnum",{num:$("#input").val()},success)
+  })
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+  </head>
+  <body style="background-color:tomato;">
+
+    <!-- This is a coment-->
+    <!-- the <br> and <hr> tag do not need end tags-->
+
+    <h1 style ="color:SlateBlue;" style="font-size:200%;">This is the biggest Heading</h1>
+    <h2 style ="color:DodgerBlue;">This is a smaller Heading</h2>
+    <h3 style ="color:MediumSeaGreen;">This is a smaller<br> Heading</h3>
+
+    <hr> <!-- hr stands for horizontal rule-->
+
+    <h4 style ="color:Violet;">This is a smaller Heading</h4>
+    <h5 style ="color:Gray;">This is a smaller Heading</h5>
+    <h6 style ="color:white;">This is the smallest Heading</h6>
+    <h1><strong>strong words</strong></h1>
+    <h1><em>em words</em></h1>
+
+    <!-- OrderedList, numbered list ,all lists use <li></li> tags in them -->
+    <ol  style ="color:black;">
+      <li>bruh </li>
+      <li>bruh2</li>
+    </ol>
+
+    <!-- Unorderlist, bullet points -->
+    <ul style="color.black;">
+      <li>bruh</li>
+      <li>bruh</li>
+    </ul>
+
+    <!-- Table, <tr> is table row, <th> is table header, <td> table data cell -->
+    <!-- Border is an atribute, table wont look like a table if border is less than 0 -->
+    <table border="10" ; width="1000" ; height="250">
+      <tr >
+        <th>Bruh Airport</th>
+        <th>Bruh Airport</th>
+        <th>nooooooooo</th>
+      </tr>
+
+      <tr>
+        <td>Bruh2 Airport</td>
+        <td>Bruh2 Airport</td>
+      </tr>
+
+      <tr>
+        <td>Bruh3 Airport</td>
+        <td>Bruh3 Airport</td>
+      </tr>
+
+      <tr>
+        <td>Bruh4 Airport</td>
+        <td>Bruh4 Airport</td>
+      </tr>
+
+      <tr>
+        <td>Bruh5 Airport</td>
+        <td>Bruh5 Airport</td>
+      </tr>
+    </table>
+
+    <!-- <a> stands for anchor, href is an attribute, the words after the href that are still in the <a> element are what will appear as the link's text -->
+    <p> Click here to go to <a href ="https://google.com">google</a> </p>
+
+    <p> Click here to go to <a href ="http://kansei.xyz" target="_blank">kansei.xyz</a> </p>
+
+    <p> Click here to jump <a href="#jump1" target="_self">Jump1</a></p>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>Jump 1 goes here <a name="jump1"></a></p>
+    <img src="./thinking.jpg" height="300" ></img>
+
+    <p>Here is a <span style="font-style:italic;color:red;"> paragraph </span> </p>
+    <div id="myName">bruhs</div>
+    <div class="yourName">asidnfsnda</div>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <h1>A Basic Form</h1>
+
+      <form action="#">
+        <fieldset>
+            <legend>Form Information</legend>
+            <div>
+              <label for="username0">Name:</label>
+              <input id="username1" type="text" name="username2">
+
+              <label for="start">Start date:</label>
+              <input type="date" id="start"
+                     name="trip-start"
+                     value="2020-01-24"
+                     min="2020-01-24"
+                     max="3017-1-1">
+              <label for="Grade">Grade:</label>
+              <input id="Grade" type="number" name="grade_" value="10" max="12" min="9">
+
+              <label for="zone">Zone:</label>
+                <select id="zone" name="zone">
+                  <option value="WZ">Worm Zone</option>
+                  <option selected="selected" value="BZ">Bruh Zone</option>
+                  <option value="JZ">Jah Zone</option>
+                </select>
+
+
+            </div>
+        </fieldset>
+        <fieldset>
+          <legend>Contact</legend>
+          <div>
+            <label for="phoneNumber">Phone</label>
+            <input type="text" id="phoneNumber" name="pNumber">
+            <br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email_">
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Personal</legend>
+          <div>
+            <label for="residence">Residence:</label>
+            <select id="residence" name="residence">
+              <option selected="selected" value="house">House</option>
+              <option value="castle">Castle</option>
+              <option value="palace">Palace</option>
+            </select>
+            <br>
+            <label for="hasLicense">Drivers License:</label>
+            <input type="checkbox" id="hasLicense" name="hasLicense_">
+
+            <br>
+            <label for="Eating"> Eating: </label>
+
+            <label for="Vegan"> Vegan </label>
+            <input type="radio" id="Vegan" name="Eating">
+
+
+            <label for="Vegetarian"> Vegetarian </label>
+            <input type="radio" id="Vegetarian" name="Eating">
+
+
+            <label for="Omnivore"> Omnivore </label>
+            <input type="radio" id="Omnivore" name="Eating">
+
+
+            <label for="Carnivore"> Carnivore </label>
+            <input type="radio" id="Carnivore" name="Eating">
+          </div>
+        </fieldset>
+        <textarea row="50" cols="50"></textarea>
+        <div>
+          <input type="reset" name="reset" value="Clear Form">
+          <input type="submit" name="send" value="Send Form">
+        </div>
+      </form>
+
+  </body>
+</html>

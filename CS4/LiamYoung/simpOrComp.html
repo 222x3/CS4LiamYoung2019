@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  Simple or Complex: Simple<input type="radio" id="simp" value="simple" name="type"> Complex<input type="radio" id="comp"value="complex" name="type">
+  <input type="button" value="submit" id="submitButton">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    function sendingTypeSuccess(data){
+      alert("Successfully set to: " + data)
+    }
+    $("#submitButton").click(function(){
+      $.post("/setType",{type:$("input[name='type']:checked").val()},sendingTypeSuccess)
+    })
+    $(document).ready(function(){
+      $("#simp").prop("checked", true);
+    })
+  </script>
+</body>
+</html>

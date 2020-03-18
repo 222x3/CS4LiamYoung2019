@@ -1,0 +1,19 @@
+jQuery is a lightweight, "write less, do more", JavaScript library.
+
+go to www.jquery.com/download
+scroll down till you see  Google CDN, Microsoft CDN  (content delivery network)
+select one of them
+
+find
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+put into html file.
+
+look at     g1A_JQueryEx   and open jquery-3.3.1.js
+
+body onload happens first then $(document).ready.
+
+here $ is used for de$(document).ready is jQuery 
+event that is fired when DOM is loaded, so it's fired when the document structure is ready.
+
+$(window).load event is fired after whole content is loaded like page contain images,css etc.

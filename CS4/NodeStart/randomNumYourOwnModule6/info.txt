@@ -1,0 +1,9 @@
+file randomMine.js will be your own module.
+
+index.js will use randomMine.js module.
+
+bring up a command prompt and go to the folder
+
+type
+node index.js 
+

@@ -1,0 +1,6 @@
+g1A_JQueryEx folder uses the uncompressed jQuery code.
+
+
+
+$(document).ready()     will be executed when all HTML elements are loaded.
+

@@ -1,0 +1,87 @@
+From Node Modules:Part One
+We could use the javascript Math.random() function, but we are looking
+at node modules.
+
+node package manager. (npm)
+
+Create folder randomNum2
+bring up command prompt and go to this folder.
+now type
+
+npm init
+...
+package name: (randomnum)    //hit enter
+version: (1.0.0)    //hit enter
+description: Generates a random number from 1 and 10   //type the description to the left
+entry point: (index.js)   //hit enter so that index.js is the name of the file
+test command:   //hit enter
+git repository:   //hit enter
+keywords:   //hit enter
+author: Mr. Yee
+license: (ISC) UNLICENSED
+
+{
+   "name": ...
+    ...
+   "license": ...
+}
+
+Is this ok? (yes)  //hit enter
+
+//when we hit enter then the above will be written to a file named package.json and above is in json format.
+//json stands for java script object notation
+
+package.json is so that if you publish the package for others to download, this info is needed and is good practice.
+
+To show above, get rid of node_modules and type     npm install
+now look node_modules and you will not see anything since no modules were asked to be installed.
+
+npm search random      //will list all packages with the word random in it.
+
+or go to npmjs.com and do a search on random.
+really want to search seedrandom.
+
+now go back to command prompt and type
+
+npm install seedrandom     // this will create node_modules folder with seedrandom module in it and package-lock.json
+                           // which is related to versioning which we won't worry about.
+
+!!!!look at contents of package.json to see if seedrandom dependecy is there.
+
+npm install seedrandom --save   // thought you needed --save to put into dependencies in package.json, 
+                                // but may do it without --save??  Look now at package.json to see if seedrandom has been added.
+
+!!!!remove seedrandom from node_modules and do npm install
+
+it is possible to see additional modules that you were not expecting, this might be caused by the module having
+dependencies on other modules.  Also, other modules could have bugs.  You can see the code in the module itself
+to fix a bug.  It is a community of people providing modules.
+
+=====================================
+create file named index.js and put into it
+
+//Script to pick a random number from 1 to 10
+
+//Require the seedrandom module
+const seedrandom = require('seedrandom');
+
+//Create a random number.
+let rng = seedrandom();                       //3 ways to define variables  var, let, const
+let myRandomNumber = Math.floor(rng()*10+1);
+console.log(myRandomNumber);
+
+
+Save the file then type in the command prompt
+
+node index.js
+
+
+
+
+
+
+
+
+
+
+  

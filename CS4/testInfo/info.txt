@@ -1,0 +1,18 @@
+
+The server needs to have the following get request handler.
+
+app.get("/operation", function(req, res){...});
+
+It needs to have the following query values.
+
+req.query.num1
+req.query.num2
+req.query.oper   ('Add', 'Multiply', 'Factorial', 'Power')
+
+For the Power operator, you can use Math.pow().
+
+It needs to return in res.json() a string that might look like
+
+"4 * 3 = 12"
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h3 id="type">Type</h3>
+  <a>Len1:</a>
+  <input type="number" id="len1">
+  <a>Len2:</a>
+  <input type="number" id="len2">
+  <br>
+  <a>Shape:  </a>
+  Triangle<input type="radio" id="triangle" name=shape>
+  Square<input type="radio" id="square" name="shape">
+  <br>
+  <input type="button" id="submitButton" value="Submit">
+  <br>
+  <a id="answer"></a>
+  <br>
+  <a href="/geotype">Change area/perim</a>
+  <br>
+  <a href="/">Home Page</a>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    function setType(data){
+      if(data==0)
+        $("#type").html("Area")
+      else if(data==1)
+        $("#type").html("Perimeter")
+    }
+    function sbf(data){
+      if($("#type").html() == "Area")
+        $("#answer").html("Area:" + data + " squared")
+      else if($("#type").html() == "Perimeter")
+        $("#answer").html("Perimter:" + data)
+    }
+    $('#submitButton').click(function() {
+      if($("#len1").val() == "" || $("#len2").val() == ""){
+        alert("Missing values")
+        return;
+      }
+      shapeType = 0;
+      if($("input[id='square']:checked").val())
+        shapeType=1;
+      $.get("/calcgeo",{len1: $("#len1").val(), len2: $("#len2").val(),shape: shapeType},sbf);
+    });
+    $(document).ready(function(){
+      $.get("/gettype",setType)
+      $("#triangle").prop("checked", true);
+      console.log("In document ready")
+    })
+  </script>
+</body>
+</html>

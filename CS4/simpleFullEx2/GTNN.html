@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <input type="number" id="inputText">
+    <input type="button" id="submitButton" value="Guess">
+    <p id="range"></p>
+    <a href="/minmax">Set min/max</a>
+    <br>
+    <a href="/">Home Page</a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      function success(data){
+        $.get("/getRange",changeRange)
+        alert(data)
+      }
+      function changeRange(data){
+        $("#range").html(data)
+        console.log(data)
+      }
+      $('#submitButton').click(function() {
+        $.get("/guess",{guess:$("#inputText").val()},success)
+        $('#inputText').val("");
+      });
+      $('#inputText').keypress(function (e) {
+        if (e.which == 13){
+          $.get("/guess",{guess:$("#inputText").val()},success)
+          $('#inputText').val("");
+        }
+      });
+      $(document).ready(function(){
+        $.get("/getRange",changeRange)
+      })
+    </script>
+  </body>
+</html>

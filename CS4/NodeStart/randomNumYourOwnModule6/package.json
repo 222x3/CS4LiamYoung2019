@@ -1,0 +1,11 @@
+{
+  "name": "randomnumyourownmodule",
+  "version": "1.0.0",
+  "description": "Generates a random number from 1 to 10",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mr. Yee",
+  "license": "UNLICENSED",
+}

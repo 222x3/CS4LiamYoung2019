@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<!--
+	Shows use of forms.
+-->
+	<head>
+		<title>Second Forms Ex</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js">
+		</script>
+	</head>
+	<body>
+		<h1>Objects</h1>
+		<hr>
+			<form action="#">
+				<fieldset>
+				<legend>Object Information</legend>
+					<div>
+
+						<label for="objName">Object:</label>
+						<input id="objName" type="text" name="objName" value="">
+<br>
+				<label for="type">Type:</label>
+ 				<input type="radio" id="animal" name="objType" value="animal" checked="checked" >
+				<label for="animal">Animal</label>
+				<input type="radio" id="plant" name="objType" value="plant">
+				<label for="plant">Plant</label>
+				<input type="radio" id="mineral" name="objType" value="mineral">
+				<label for="mineral">Mineral</label>
+ 				<input type="radio" id="manMade" name="objType" value="manMade">
+				<label for="manMade">Man Made</label>
+<br>
+					<input id="submit" type="submit" name="submit" value="Send Form">
+
+					</div>
+
+
+				</fieldset>
+			</form>
+
+	<br>
+	<div id="error"></div>
+  	<br>
+
+		<table id="theTable" border="1">
+			<tr>
+				<th>Object</th>
+				<th>Type</th>
+			</tr>
+
+		</table>
+
+		<script type="text/javascript">
+
+
+		$(document).ready(
+			function()
+			{
+				$("form").submit(
+					function(event)
+					{
+
+
+let error = false;
+$("#theTable tr").each(
+	function()
+	{
+		if ($(this).find("td:eq(0)").text() == $("#objName").val())
+			error = true;
+	}
+);
+
+if ($("#objName").val() == "") {
+	$("#error").html("A Name Must Be Entered");
+	return false;
+}
+else if (error) {
+	$("#error").html("Name Already Entered");
+	return false;
+}
+else
+{
+	$("#error").html("");
+}
+
+$("#theTable").append("<tr>" +
+"<td>" + $("#objName").val() +"</td>"  +
+"<td>" + $('input[name=objType]:checked').val() + "</td>" +
+"</tr>");
+
+
+						return false;
+					}
+				);
+			}
+		);
+		</script>
+
+
+	</body>
+</html>

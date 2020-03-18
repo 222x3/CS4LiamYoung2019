@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <a href="/geo">Calculator</a>
+  <br>
+  Type:
+  <br>
+  Area:<input type="radio" name="selectType" id="area">
+  <br>
+  Perimeter:<input type="radio" name="selectType" id="perim">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    var currentType;
+    function success(data){
+      console.log("Successfully changed type")
+    }
+    function getType(data){
+      currentType = data;
+
+      if(currentType == 0)
+        $("#area").prop("checked", true);
+      else if(currentType == 1)
+        $("#perim").prop("checked",true);
+    }
+    $("#area").click(function(){
+      console.log("area clicked")
+      $.get("/setType",{type:0},success)
+    })
+    $("#perim").click(function(){
+      console.log("perim clicked")
+      $.get("/setType",{type:1},success)
+    })
+    $(document).ready(function(){
+      $.get("/getType",getType)
+    })
+  </script>
+</body>
+</html>

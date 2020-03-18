@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <h1>Min:</h1>
+
+  <input type="number" id="setmin">
+  <h1>Max</h1>
+  <input type="number" id="setmax">
+  <br>
+  <br>
+  <br>
+  <br>
+  <input type="button" id="setButton" value="Set">
+  <br>
+  <br>
+  <br>
+  <a href="/">Back</a>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    function success(data){
+      alert(data)
+    }
+    function replaceMin(data){
+      $('#setmin').val(data)
+    }
+    function replaceMax(data){
+      $('#setmax').val(data)
+    }
+    $('#setButton').click(function() {
+      $.get("/min",
+            {min:$("#setmin").val()},
+            success)
+      $.get("/max",
+            {max:$("#setmax").val()},
+            success)
+    });
+    $(document).ready(function(){
+      $.get("/getmin",replaceMin)
+      $.get("/getmax",replaceMax)
+    })
+  </script>
+</body>
+</html>

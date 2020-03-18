@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <script type="text/javascript" src="jq.js"></script>
+    <script src="list.js"></script>
+  </head>
+  <body>
+    <h1> Objects </h1>
+    <input type="text" id="addText">
+    <input type="button" value="Add to list" id="addButton"><br>
+
+    <input type="radio" name="type" value="Animal" id="defaultAdd"> Animal
+    <input type="radio" name="type" value="Plant"> Plant
+    <input type="radio" name="type" value="Mineral"> Mineral
+    <input type="radio" name="type" value="Man Made"> Man Made
+    <br><br><br><br><br><br>
+
+    <input type="text" id="removeObjectName">
+    <input type="button" value="Remove object by name" id="removeObjectByNameButton">
+    <br><br><br><br><br><br>
+
+    <input type="radio" name="rType" value="Animal" id="defaultRemove"> Animal
+    <input type="radio" name="rType" value="Plant"> Plant
+    <input type="radio" name="rType" value="Mineral"> Mineral
+    <input type="radio" name="rType" value="Man Made"> Man Made
+    <input type="button" value="Remove object by type" id="removeObjectByTypeButton">
+    <br><br><br><br><br><br>
+
+
+    <table style="width:100% table-layout:fixed;" border="1" id="table">
+      <tr>
+        <th>Object</th>
+        <th>Type</th>
+        <th>Change</th>
+      </tr>
+    </table>
+
+  </body>
+</html>

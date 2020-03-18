@@ -1,0 +1,9 @@
+Much of what you will do with jQuery is through selectors.
+
+3 primary selectors.  By class, by ID, by element (tag).
+
+class uses $(".titleClass")         syntax like css
+
+id uses $("#bookTitle")         syntax like css
+
+element uses $("div")

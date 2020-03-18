@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <p id="calcTitle"></p>
+  Num1: <input type="number" id="num1input">
+  Operation: <select id="op">
+              <option id="op1" value="add">ADD</option>
+              <option id="op2"value="mul">MULTIPLY</option>
+            </select>
+  Num2: <input type="number" id="num2input">
+  <input type="button" id="submitButton"value="Select">
+  <p id="displayAnswer"></p>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    function operationSuccess(data){
+      $("#displayAnswer").html(data)
+    }
+    function setType(data){
+      if(data == "simple")
+      {
+        $("#op1").html("ADD");
+        $("#op1").val("add");
+        $("#op2").html("MULTIPLY");
+        $("#op2").val("mul");
+        $("#calcTitle").html("Simple Calculations")
+      }
+      else if(data == "complex")
+      {
+        $("#op1").html("FACTORIAL");
+        $("#op1").val("fac");
+        $("#op2").html("POWER");
+        $("#op2").val("pow");
+        $("#calcTitle").html("Complex Calculations")
+      }
+    }
+    $("#submitButton").click(function(){
+      $.get("/operation",{num1:$("#num1input").val(), num2:$("#num2input").val(), op: $("#op").val()},operationSuccess)
+    })
+    $(document).ready(function(){
+      $.get("/getType",setType)
+    })
+  </script>
+</body>
+</html>
